@@ -1,0 +1,7 @@
+#activities
+  - @activities.each do |a|
+    = link_to event_activity_path(a) do
+      .activity
+        h2 = a.title
+        p = a.description
+        p = a.location

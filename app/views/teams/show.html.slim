@@ -1,0 +1,8 @@
+.container-fluid
+  .col-md-6.col-md-offset-3.mid-margin
+    = link_to "Teams", teams_path
+    h2 = @team.driver_name
+    p = @team.co_driver_name
+    p = @team.competitor_type
+    p = @team.car_type
+    p = @team.car_number

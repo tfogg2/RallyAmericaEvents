@@ -1,0 +1,22 @@
+.bootstrap-iso
+  .container-fluid
+    .row
+      #form
+        .col-md-6.well.col-md-offset-3
+          h1 Add Activity
+          = simple_form_for [@event, @activity] do |f|
+            = f.error_notification
+            .form-group = f.input :title, placeholder: "Title", label: false, class: "form-control"
+            .form-group = f.input :description, placeholder: "Description", label: false, class: "form-control"
+            .form-group = f.input :location, placeholder: "Location", label: false, class: "form-control"
+            .form-group
+              label Date
+              /.input-group-addon
+              /  i.glyphicon.glyphicon-calendar
+              = f.input :date, placeholder: "MM/DD/YYYY", as: :date, label: false, start_year: Date.today.year, end_year: Date.today.year + 10, order: [:month, :day, :year]
+
+            .form-group
+              label Time
+              = f.input :time, placeholder: "Time", label: false, as: :time, class: "form-control datepicker"
+
+            .form-actions = f.button :submit, class: "btn btn-default"

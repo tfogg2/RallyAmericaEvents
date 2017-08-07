@@ -1,0 +1,37 @@
+#event-show
+  .event-images
+    = image_tag('example-img.png')
+  .event-info
+    h2 = @event.title
+    p = @event.description
+    p = @event.location
+- if @activities.any?
+  .table-responsive
+    #events
+      table.table.table-hover
+        thead
+          .header
+            h3 Activities
+          tr.top-row
+            th Title
+            th Description
+            th Location
+            th Date
+            th Time
+
+        tbody
+          - @activities.each do |a|
+            = link_to event_activity_path(@event, a) do
+              tr.event
+                td = a.title
+                td = a.description
+                td = a.location
+                td = a.date.strftime("%D")
+                td = a.time.strftime("%I:%M %p")
+
+- if user_signed_in?
+  = link_to new_event_activity_path(@event) do
+    .new-btn
+      .btn.btn-primary Add Activity
+  end
+end

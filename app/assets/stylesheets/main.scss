@@ -1,0 +1,140 @@
+body{
+  background-color: #161616;
+  -webkit-font-smoothing: antialiased;
+  font-family: Open Sans,open-sans,sans-serif;
+}
+form{
+  color: black;
+}
+a{
+  text-decoration: none;
+}
+#form{
+  background: #fefefe;
+  color: black;
+  margin: 20px auto;
+  text-align: center;
+}
+#banner-container{
+  padding-top: 10px;
+
+  // background: #161616;
+  height: 90px;
+}
+#image-gallery-container{
+  width: 80%;
+  // background: #353535;
+  margin: 40px auto;
+  height: 400px;
+  padding: 20px 0;
+}
+.image-gallery{
+  height: 360px;
+  margin: 0 auto;
+  width: 80%;
+  border: 1px solid #e0e0e0;
+}
+.navbar.navbar-inverse{
+  margin-bottom: 0;
+  border: none;
+  border-radius: 0;
+}
+.navbar.navbar-inverse a{
+  color: white;
+  text-decoration: none;
+}
+.navbar.navbar-inverse a:hover{
+  color: #e0e0e0;
+}
+.content.col-md-12{
+  // background-color: #161616;
+  // padding-top: 20px;
+  min-height: 400px;
+
+}
+.event{
+  height: 50px;
+  text-align: left;
+}
+#event-show{
+  height: 200px;
+  padding: 20px;
+}
+.event-images{
+  float: left;
+  padding: 20px 20px;
+}
+.event-info{
+  float: left;
+  padding: 0 20px;
+}
+.event-info p{
+  opacity: .6;
+}
+#events{
+  border-top: none;
+  border: 1px solid #e0e0e0;
+  border-bottom: none;
+  margin-top: 20px;
+}
+#events tr{
+  padding: 0 20px;
+}
+#events th{
+  color: #cecece;
+  text-align: left;
+  padding-left: 20px;
+}
+
+#activities th{
+  color: #cecece;
+  text-align: left;
+  padding-left: 20px;
+}
+#events td{
+  padding-top: 14px;
+  padding-left: 20px;
+}
+.event-image{
+}
+.banner{
+  width: 80%;
+  margin: 0 auto 20px auto;
+  height:80px;
+  background: #efefef;
+
+  padding: 0 20px 20px 40px;
+}
+.header{
+  text-align: left;
+  color: #585858;
+  padding: 0px 20px 5px 20px;
+  margin-top: 20px;
+}
+thead th{
+  background: #161616;
+  border: none;
+}
+tr:nth-child(even) {
+  background: #f1f1f1;;
+}
+.event-banner h1{
+  padding-top: 20px;
+}
+.new-btn{
+  margin: 20px auto;
+  text-align: center;
+}
+
+.plus{
+  height: 52px;
+  width: 52px;
+  margin: 20px auto;
+  background: url('plus.png') no-repeat;
+}
+#footer{
+  width: 100%;
+  margin-top: 20px;
+  background: #f1f1f1;
+  bottom: 0;
+}
