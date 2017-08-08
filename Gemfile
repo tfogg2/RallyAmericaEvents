@@ -31,9 +31,9 @@ gem "slim-rails"
 gem "paperclip", "~> 5.0.0"
 
 gem 'activeadmin'
+gem 'activeadmin_addons'
 gem "cancan"
 gem 'devise'
-
 gem 'simple_form'
 
 gem 'bootstrap-sass', '3.2.0.2'

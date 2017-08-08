@@ -33,7 +33,7 @@ class ActivitiesController < ApplicationController
 
   def update
     respond_to do |format|
-      if @step.update(step_params)
+      if @activity.update(activity_params)
         format.html { redirect_to event_path(@event), notice: 'Activity was successfully updated.' }
         format.json { render :show, status: :ok, location: @activity }
       else
@@ -44,7 +44,7 @@ class ActivitiesController < ApplicationController
   end
 
   def destroy
-    @step.destroy
+    @activity.destroy
     respond_to do |format|
       format.html { redirect_to event_path(@event), notice: 'Activity was successfully deleted.' }
       format.json { head :no_content }

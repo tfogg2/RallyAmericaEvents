@@ -5,6 +5,13 @@
     h2 = @event.title
     p = @event.description
     p = @event.location
+    - if @supplemental
+      = link_to "Supplemental", @supplemental.attachment.url(:original, false), target: "_blank"
+    -else
+      -if user_signed_in?
+        = link_to "Add Supplemental", new_event_supplemental_path(@event)
+      end
+    end
 - if @activities.any?
   .table-responsive
     #events

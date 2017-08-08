@@ -82,27 +82,27 @@ a{
 }
 #events th{
   color: #cecece;
-  text-align: left;
+  text-align: center;
   padding-left: 20px;
 }
 
 #activities th{
   color: #cecece;
-  text-align: left;
+  text-align: center;
   padding-left: 20px;
 }
 #events td{
   padding-top: 14px;
   padding-left: 20px;
+  text-align: center;
 }
 .event-image{
 }
 .banner{
-  width: 80%;
+  width: 728px;
   margin: 0 auto 20px auto;
-  height:80px;
-  background: #efefef;
-
+  height: 115px;
+  background: url('banner.png') no-repeat;
   padding: 0 20px 20px 40px;
 }
 .header{

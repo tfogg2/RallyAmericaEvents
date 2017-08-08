@@ -4,8 +4,11 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root to: 'home#index'
 
+
+
   resources :events do
     resources :activities
+    resources :supplementals
   end
   resources :teams
 

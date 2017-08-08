@@ -10,6 +10,7 @@
           th Location
           th Start Date
           th End Date
+          th Supplemental
 
       tbody
       - @events.each do |e|
@@ -20,6 +21,7 @@
             td = e.location
             td = e.start_date.strftime("%D")
             td = e.end_date.strftime("%D")
+            td = link_to image_tag('pdf-icon.svg'), e.supplementals.first.attachment.url(:original, false), target: "_blank" 
 
 - if user_signed_in?
   = link_to new_event_path do

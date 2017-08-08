@@ -1,0 +1,11 @@
+.bootstrap-iso
+  .container-fluid
+    .row
+      #form
+        .col-md-6.well.col-md-offset-3
+          h1 Add Supplemental
+          = simple_form_for [@event, @supplemental] do |f|
+            = f.error_notification
+            .form-group = f.input :attachment, as: :file, label: false, class: "form-control"
+
+            .form-actions = f.button :submit, class: "btn btn-default"

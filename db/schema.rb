@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170807003722) do
+ActiveRecord::Schema.define(version: 20170807225801) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -48,10 +51,10 @@ ActiveRecord::Schema.define(version: 20170807003722) do
   end
 
   create_table "supplementals", force: :cascade do |t|
-    t.string "file_file_name"
-    t.string "file_content_type"
-    t.integer "file_file_size"
-    t.datetime "file_updated_at"
+    t.string "attachment_file_name"
+    t.string "attachment_content_type"
+    t.integer "attachment_file_size"
+    t.datetime "attachment_updated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "event_id"
