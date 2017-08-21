@@ -6,6 +6,7 @@ class TeamsController < ApplicationController
 
   def new
     @team = Team.new
+    @events = Event.all
   end
 
   def show
@@ -51,7 +52,7 @@ class TeamsController < ApplicationController
 
 
   def team_params
-    params.require(:team).permit(:driver_name, :co_driver_name, :competitor_type, :car_type, :car_number, :car_class)
+    params.require(:team).permit(:driver_name, :co_driver_name, :competitor_type, :car_type, :car_number, :car_class,:events, :event_ids => [])
   end
 
 

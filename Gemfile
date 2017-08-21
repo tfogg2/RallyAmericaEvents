@@ -32,6 +32,7 @@ gem "paperclip", "~> 5.0.0"
 
 gem 'activeadmin'
 gem 'activeadmin_addons'
+gem "just-datetime-picker"
 gem "cancan"
 gem 'devise'
 gem 'simple_form'

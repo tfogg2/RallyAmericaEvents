@@ -6,3 +6,7 @@
     p = @team.competitor_type
     p = @team.car_type
     p = @team.car_number
+    p
+      ul
+        - @team.events.each do |t|
+          li= t.title

@@ -3,21 +3,21 @@
   <head>
     <title>RallyAmericaEvents</title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= stylesheet_link_tag    'application', media: 'all', "data-turbolinks-track" => true %>
     <%= javascript_include_tag 'application' %>
 
     <!-- Bootstrap Date-Picker Plugin -->
 
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
 
   </head>
 
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
-      <div class="navbar-header">
-        <%= link_to "Rally America", root_path, class: "navbar-brand" %>
+      <div id="logo" class="navbar-header">
+        <%= link_to image_tag('rally-logo.png'), root_path, class: "navbar-brand" %>
       </div>
-        <ul class="nav navbar-nav navbar-right">
+        <ul id= "right-nav" class="nav navbar-nav navbar-right">
           <li><%= link_to "Events", events_path %></li>
           <li><%= link_to "Teams", teams_path %></li>
           <%- if user_signed_in? %>

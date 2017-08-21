@@ -20,4 +20,9 @@
               label Class
               = f.input :car_class, label: false, collection: Team.car_classes.map {|tm| [car_class_label(tm), tm] }, include_blank: false, class: "form-control"
 
+            .form-group
+              label Events
+              = f.fields_for "events" do |e|
+                = e.input :event_ids, label: false, collection: Event.all, as: :check_boxes, include_blank: false, class: "form-control", multiple: true
+
             .form-actions = f.button :submit, class: "btn btn-default"

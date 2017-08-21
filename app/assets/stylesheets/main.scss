@@ -1,5 +1,5 @@
 body{
-  background-color: #161616;
+  background-color: #000 !important;
   -webkit-font-smoothing: antialiased;
   font-family: Open Sans,open-sans,sans-serif;
 }
@@ -8,6 +8,20 @@ form{
 }
 a{
   text-decoration: none;
+}
+a.navbar-brand{
+  padding-top: 10px;
+  margin-left: -5px;
+}
+.navbar{
+  height: 80px;
+}
+#logo .navbar-brand{
+  margin: 0 auto;
+  text-align: center;
+}
+#right-nav{
+  margin-top: 30px;
 }
 #form{
   background: #fefefe;
@@ -38,6 +52,8 @@ a{
   margin-bottom: 0;
   border: none;
   border-radius: 0;
+  background: #000;
+  background-position: center;
 }
 .navbar.navbar-inverse a{
   color: white;
@@ -56,6 +72,13 @@ a{
   height: 50px;
   text-align: left;
 }
+.event tbody, tr, td{
+  border-top: none !important;
+}
+#events tr:hover{
+  background: #161616;
+}
+
 #event-show{
   height: 200px;
   padding: 20px;
@@ -71,11 +94,17 @@ a{
 .event-info p{
   opacity: .6;
 }
+#main-div{
+  background: #000;
+  margin-top: 45px;
+  color: #efefef;
+}
 #events{
+
   border-top: none;
-  border: 1px solid #e0e0e0;
+  border: none;
   border-bottom: none;
-  margin-top: 20px;
+
 }
 #events tr{
   padding: 0 20px;
@@ -103,11 +132,11 @@ a{
   margin: 0 auto 20px auto;
   height: 115px;
   background: url('banner.png') no-repeat;
-  padding: 0 20px 20px 40px;
+  padding: 10px 20px 20px 40px;
 }
 .header{
   text-align: left;
-  color: #585858;
+  color: #efefef;
   padding: 0px 20px 5px 20px;
   margin-top: 20px;
 }
@@ -116,7 +145,7 @@ thead th{
   border: none;
 }
 tr:nth-child(even) {
-  background: #f1f1f1;;
+  background: #2b2b2b;
 }
 .event-banner h1{
   padding-top: 20px;
@@ -132,9 +161,9 @@ tr:nth-child(even) {
   margin: 20px auto;
   background: url('plus.png') no-repeat;
 }
-#footer{
-  width: 100%;
-  margin-top: 20px;
-  background: #f1f1f1;
-  bottom: 0;
-}
+// #footer{
+//   width: 100%;
+//   margin-top: 20px;
+//   background: #f1f1f1;
+//   bottom: 0;
+// }

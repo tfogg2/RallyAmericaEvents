@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170807225801) do
+ActiveRecord::Schema.define(version: 20170818155205) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,30 @@ ActiveRecord::Schema.define(version: 20170807225801) do
     t.datetime "time"
   end
 
+  create_table "categories", id: :serial, force: :cascade do |t|
+    t.string "title"
+    t.string "handle"
+    t.string "shopify_collection_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "collection_id"
+  end
+
+  create_table "collections", id: :serial, force: :cascade do |t|
+    t.string "shop_id"
+    t.string "title"
+    t.string "shopify_collection_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "event_teams", id: false, force: :cascade do |t|
+    t.bigint "event_id", null: false
+    t.bigint "team_id", null: false
+    t.index ["event_id", "team_id"], name: "index_event_teams_on_event_id_and_team_id"
+    t.index ["team_id", "event_id"], name: "index_event_teams_on_team_id_and_event_id"
+  end
+
   create_table "events", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -50,6 +74,42 @@ ActiveRecord::Schema.define(version: 20170807225801) do
     t.datetime "end_date"
   end
 
+  create_table "product_tags", id: :serial, force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_product_tags_on_product_id"
+    t.index ["tag_id"], name: "index_product_tags_on_tag_id"
+  end
+
+  create_table "product_types", id: :serial, force: :cascade do |t|
+    t.integer "category_id"
+    t.string "title"
+    t.string "handle"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_product_types_on_category_id"
+  end
+
+  create_table "products", id: :serial, force: :cascade do |t|
+    t.integer "product_type_id"
+    t.integer "category_id"
+    t.string "shopify_product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["product_type_id"], name: "index_products_on_product_type_id"
+  end
+
+  create_table "shops", id: :serial, force: :cascade do |t|
+    t.string "shopify_domain", null: false
+    t.string "shopify_token", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["shopify_domain"], name: "index_shops_on_shopify_domain", unique: true
+  end
+
   create_table "supplementals", force: :cascade do |t|
     t.string "attachment_file_name"
     t.string "attachment_content_type"
@@ -58,6 +118,15 @@ ActiveRecord::Schema.define(version: 20170807225801) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "event_id"
+  end
+
+  create_table "tags", id: :serial, force: :cascade do |t|
+    t.integer "product_type_id"
+    t.string "title"
+    t.string "handle"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_type_id"], name: "index_tags_on_product_type_id"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -89,4 +158,10 @@ ActiveRecord::Schema.define(version: 20170807225801) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "product_tags", "products"
+  add_foreign_key "product_tags", "tags"
+  add_foreign_key "product_types", "categories"
+  add_foreign_key "products", "categories"
+  add_foreign_key "products", "product_types"
+  add_foreign_key "tags", "product_types"
 end
