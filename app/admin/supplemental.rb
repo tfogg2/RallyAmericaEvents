@@ -1,6 +1,6 @@
 ActiveAdmin.register Supplemental do
-  belongs_to :event
   permit_params :attachment, :event_id
+
   index do
     selectable_column
     id_column
@@ -13,6 +13,7 @@ ActiveAdmin.register Supplemental do
   form do |f|
     f.inputs do
       f.input :attachment, as: :file, label: false, class: "form-control"
+      f.inputs :event, collection: Event.all.map { |event| [event.title, event.id] }
     end
     f.actions
   end

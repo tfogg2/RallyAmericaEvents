@@ -1,2 +1,39 @@
 #image-gallery-container
   .image-gallery
+
+.message-container
+  .message
+    h1 Something
+    h1.big  Big.
+    p Checkout Rally America's upcoming events
+    button.view-events = link_to "View Events", events_path
+#home
+  .home-content
+    .licensing
+      = image_tag('licensing.png')
+      h3 Licensing
+      p Rewning or purchasing a license for the first time? Please click here:
+      p = link_to "Rally America Licensing", "https://rallyamericainc.redpodium.com/rally-america-participant-licensing-2017"
+    .about
+      = image_tag('about.png')
+      h3 About us
+      p Rally America is the official sanctioning body for the Rally America national championship, as well as many rally regional championships and rallycross events in the United States.
+    .volunteer
+      = image_tag('volunteer.png')
+      h3 Volunteer
+      p Rally America is looking for a lot of good folks that want to be involved and near the rally action. Please click here to register to become a volunteer:
+      p = link_to "Rally America Volunteer", "https://rallyamericainc.redpodium.com/rally-america-volunteer-registration"
+
+.message-container.bottom
+  .message
+    h1.big Don't
+    h1 miss out.
+    p Stay in touch to make sure you’re up to date
+  .social-bottom
+    .facebook
+      = link_to image_tag('fb-icon.svg', class:"fb-bottom"), "https://www.facebook.com/RallyAmerica/", target: "_blank"
+      = link_to image_tag('fb-yellow.svg', class:"fb-bottom-yellow"), "https://www.facebook.com/RallyAmerica/", target: "_blank"
+
+    .youtube
+      = link_to image_tag('youtube-icon.svg', class:"youtube-bottom"), "https://www.youtube.com/user/RallyAmericaSeries", target: "_blank"
+      = link_to image_tag('youtube-yellow.svg', class:"youtube-bottom-yellow"), "https://www.youtube.com/user/RallyAmericaSeries", target: "_blank"

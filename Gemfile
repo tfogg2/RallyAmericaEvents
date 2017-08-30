@@ -37,14 +37,12 @@ gem "cancan"
 gem 'devise'
 gem 'simple_form'
 
-gem 'bootstrap-sass', '3.2.0.2'
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
 gem 'jquery-rails'
 
 gem 'momentjs-rails', '>= 2.9.0'
-gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

@@ -8,6 +8,7 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @activities = @event.activities.all
     @supplemental = @event.supplementals.first
+    @teams = @event.teams.all
   end
 
   def new

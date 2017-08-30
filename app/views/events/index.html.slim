@@ -3,36 +3,27 @@
     .header
       h1 Events
 
-      .table-responsive
-        table.table.table-hover
-          thead
-            tr.top-row
-              th Title
-              th Description
-              th Location
-              th Start Date
-              th End Date
-              th Supplemental
+    .table-responsive
+      table.table.table-hover
+        thead
+          tr.top-row
+            th Title
+            th Description
+            th Location
+            th Start Date
+            th End Date
+            th Supplemental
 
-          tbody
-          - @events.each do |e|
-            = link_to event_path(e) do
-              tr.event
-                - if user_signed_in?
-                  td = link_to e.title, event_path(e)
-                -else
-                  td = e.title
-                td = e.description
-                td = e.location
-                td = e.start_date.strftime("%D")
-                td = e.end_date.strftime("%D")
-                - if e.supplementals.any?
-                  td = link_to image_tag('pdf-icon.svg'), e.supplementals.first.attachment.url(:original, false), target: "_blank"
-                -else
-                  td N/A
-    - if user_signed_in?
-      = link_to new_event_path do
-        .new-btn
-          .btn.btn-primary Add Event
-      end
-    end
+        tbody
+        - @events.each do |e|
+          = link_to event_path(e) do
+            tr.event
+              td = link_to e.title, event_path(e)
+              td = e.description
+              td = e.location
+              td = e.start_date.strftime("%D")
+              td = e.end_date.strftime("%D")
+              - if e.supplementals.any?
+                td = link_to image_tag('pdf-icon-solid.svg'), e.supplementals.first.attachment.url(:original, false), target: "_blank"
+              -else
+                td N/A

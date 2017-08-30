@@ -3,44 +3,65 @@
   <head>
     <title>RallyAmericaEvents</title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-
+    <!-- , "data-turbolinks-track" => true -->
     <!-- Bootstrap Date-Picker Plugin -->
 
     <!-- <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
 
   </head>
-
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div id="logo" class="navbar-header">
-        <%= link_to image_tag('rally-logo.png'), root_path, class: "navbar-brand" %>
+    <div id="top-bar">
+      <ul class="nav dropdown">
+        <li class="button-dropdown">
+          <%= link_to "javascript:void(0)", class:"dropdown-toggle" do %>
+            <span class="menu-icon"></span>
+            <span class="menu-text">Menu</span>
+            <span class="menu-icon-close"></span>
+            <span class="menu-text-close">Close</span>
+          <% end %>
+          <ul class="dropdown-menu">
+            <div class="top-nav">
+              <li><%= link_to "Events", events_path %></li>
+              <li><%= link_to "Teams", teams_path %></li>
+            </div>
+            <%- if user_signed_in? %>
+              <div class="bottom-nav">
+                 <li><%= link_to "Admin", admin_root_path %></li>
+                 <li><%= link_to "Logout", destroy_user_session_path, :controller => "users", method: :delete %></li>
+              </div>
+            <%- else %>
+              <div class="bottom-nav">
+                <li><%= link_to "Login", new_user_session_path %></li>
+              </div>
+            <%- end %>
+          </ul>
+        </li>
+      </ul>
+      <div class="logo-container">
+        <%= link_to image_tag('rally-logo.png'), root_path, class:"logo" %>
       </div>
-        <ul id= "right-nav" class="nav navbar-nav navbar-right">
-          <li><%= link_to "Events", events_path %></li>
-          <li><%= link_to "Teams", teams_path %></li>
-          <%- if user_signed_in? %>
-             <li><%= link_to "Admin", admin_root_path %></li>
-             <li><%= link_to "Logout", destroy_user_session_path, :controller => "users", method: :delete %></li>
-          <%- else %>
-             <li><%= link_to "Login", new_user_session_path %></li>
-          <%- end %>
-
-        </ul>
+      <div class="social-container">
+        <%= link_to image_tag('fb-icon.svg'), "https://www.facebook.com/RallyAmerica/", class:'fb op', target: "_blank" %>
+        <%= link_to image_tag('youtube-icon.svg'), "https://www.youtube.com/user/RallyAmericaSeries", class:'youtube op', target: "_blank" %>
+        <%= link_to image_tag('fb-icon-black.svg'), "https://www.facebook.com/RallyAmerica/", class:'fb black', target: "_blank" %>
+        <%= link_to image_tag('youtube-icon-black.svg'), "https://www.youtube.com/user/RallyAmericaSeries", class:'youtube black', target: "_blank" %>
       </div>
     </div>
-  </nav>
 
   <body>
-    <div id="banner-container">
-      <div class="banner"></div>
-    </div>
+    <% if current_page?(root_path) %>
+      <%# render 'layouts/home_header' %>
+    <% else %>
+      <div id="banner-container">
+        <div class="banner"></div>
+      </div>
+    <% end %>
     <div class="content">
       <%= yield %>
     </div>
-    <!-- <footer id="footer">
-
-    </footer> -->
+    <footer id="footer">
+      <sub>Copyright © 2017 Rally America, Inc. - All Rights Reserved.<sub>
+    </footer>
   </body>
 </html>

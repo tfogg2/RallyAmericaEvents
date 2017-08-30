@@ -1,0 +1,24 @@
+#events
+  table.table.table-hover
+    thead
+      .header
+        h1 Teams
+      tr.top-row
+        th #
+        th Car Number
+        th Type
+        th Class
+        th Car Type
+        th Driver Name
+        th Co-driver Name
+
+    tbody
+      - @teams.each_with_index do |t, i|
+        tr.team
+          td = i+1
+          td = t.car_number
+          td = competitor_type_label(t.competitor_type)
+          td = car_class_label(t.car_class)
+          td = t.car_type
+          td = t.driver_name
+          td = t.co_driver_name
