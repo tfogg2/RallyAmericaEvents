@@ -1,7 +1,5 @@
 ActiveAdmin.register Activity do
   permit_params :title, :description, :location, :time, :date, :event_id
-  # has_many :events, :through => :events_teams
-  # filter :events, :join_table => :events_teams
   index do
     selectable_column
     id_column

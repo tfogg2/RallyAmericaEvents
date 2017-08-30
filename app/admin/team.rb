@@ -1,7 +1,5 @@
 ActiveAdmin.register Team do
   permit_params :driver_name, :co_driver_name, :competitor_type, :car_type, :car_number, :car_class, :event_ids => []
-  # has_many :events, :through => :events_teams
-  # filter :events, :join_table => :events_teams
   index do
     selectable_column
     id_column
