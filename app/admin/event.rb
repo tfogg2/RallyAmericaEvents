@@ -21,7 +21,7 @@ ActiveAdmin.register Event do
       f.input :title
       f.input :description
       f.input :location
-      f.input :start_date, as: :just_datetime_picker
+      f.input :start_date, as: :just_time_picker
       f.input :end_date, as: :just_datetime_picker
     end
     f.actions

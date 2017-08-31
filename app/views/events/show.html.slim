@@ -25,7 +25,6 @@
               th Description
               th Location
               th Date
-              th Time
 
           tbody
             - @activities.each do |a|
@@ -35,4 +34,4 @@
                   td = a.description
                   td = a.location
                   td = a.date.strftime("%D")
-                  td = a.time.strftime("%I:%M %p")
+                  //td = a.time.strftime("%I:%M %p")

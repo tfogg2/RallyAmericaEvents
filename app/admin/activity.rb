@@ -20,7 +20,6 @@ ActiveAdmin.register Activity do
       f.input :title
       f.input :description
       f.input :location
-      f.input :time, as: :just_datetime_picker
       f.input :date, as: :just_datetime_picker
       f.inputs :event, collection: Event.all.map { |event| [event.title, event.id] }
     end
