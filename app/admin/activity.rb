@@ -1,5 +1,5 @@
 ActiveAdmin.register Activity do
-  permit_params :title, :description, :location, :time, :date, :date_date, :date_time_minute, :event_id
+  permit_params :title, :description, :location, :time, :date, :date_date, :date_time_hour, :date_time_minute, :event_id
   index do
     selectable_column
     id_column
