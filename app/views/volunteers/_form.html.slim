@@ -20,12 +20,12 @@
         = f.input  :medical, as: :text, label: "If you selected medical please list here your medical credentials"
         = f.input  :sfi_number, label: "If selecting Technical Inspection please provide your SFI Certificate Number"
         = f.input  :sweep_equipment, as: :text, label: "If you selected Sweep what type of equipment do you have?"
-        = f.input  :first_time_volunteer, label: "Are you a first time volunteer?"
-        = f.input  :ham_operator, label: "Are you a licenced Ham Radio Operator?"
-        = f.input  :ham_number, label: "If you checked the box above what's your Ham Radio License Number"
+        = f.input  :first_time_volunteer, label: "Are you a first time volunteer?", class: "first-time-volunteer-boolean"
+        = f.input  :ham_operator, label: "Are you a licenced Ham Radio Operator?", class: "ham-boolean"
+        = f.input  :ham_number, label: "If you checked the box above, what's your Ham Radio License Number"
         = f.input  :radio_equipment, as: :text, label: "If selected Radio operator please provide your radio equipment information"
         = f.input  :friends, as: :text, label: "If you have someone you would like to be working with please list their names here"
         = f.input :events, collection: Event.all.map { |event| [event.title, event.id] }, input_html: { multiple: true }, label: "Please pick the rallys you'd like to volunteer for"
 
       .form-actions
-         = f.button :submit
+         = f.button :submit, value: "Volunteer"
