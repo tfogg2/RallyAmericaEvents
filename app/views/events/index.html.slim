@@ -24,6 +24,6 @@
               td = e.start_date.strftime("%D")
               td = e.end_date.strftime("%D")
               - if e.supplementals.any?
-                td = link_to image_tag('pdf-icon-solid.svg'), e.supplementals.first.attachment.url(:original, false), target: "_blank"
+                td = link_to image_tag('pdf-icon-solid.svg'), e.supplementals.last.attachment.url(:original, false), target: "_blank"
               -else
                 td N/A
