@@ -8,8 +8,8 @@
         - if @supplemental
           = link_to "Supplemental", @supplemental.attachment.url(:original, false), target: "_blank"
         end
-    .event-images
-      = image_tag('rally-wyoming-logo.png')
+  /  .event-images
+  /    = image_tag('rally-wyoming-logo.png')
 
   - if @teams.any?
     = render 'teams'
