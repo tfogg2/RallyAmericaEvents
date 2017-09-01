@@ -15,7 +15,8 @@ class SupplementalsController < ApplicationController
 
   def create
     @supplemental = @event.supplementals.new(supplemental_params)
-
+    @supplemental.attachment = params[:supplemental][:attachment]
+    @supplemental.save
     respond_to do |format|
       if @supplemental.save
         format.html { redirect_to event_path(@event), notice: 'Supplemental was successfully created.' }
