@@ -7,7 +7,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @activities = @event.activities.all
-    @supplemental = @event.supplementals.last
+    @supplemental = @event.supplementals.last!
     @teams = @event.teams.all
   end
 
