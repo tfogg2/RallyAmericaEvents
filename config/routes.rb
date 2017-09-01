@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
   resources :teams
 
-
+  resources :volunteers
 
   resources :events do
     resources :activities

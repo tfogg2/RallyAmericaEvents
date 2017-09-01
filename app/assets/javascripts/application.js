@@ -13,5 +13,4 @@
 //= require jquery
 //= require moment
 //= require rails-ujs
-
 //= require_tree .

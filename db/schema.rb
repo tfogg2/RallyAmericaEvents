@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170830175912) do
+ActiveRecord::Schema.define(version: 20170901180617) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,13 @@ ActiveRecord::Schema.define(version: 20170830175912) do
     t.bigint "team_id", null: false
     t.index ["event_id", "team_id"], name: "index_event_teams_on_event_id_and_team_id"
     t.index ["team_id", "event_id"], name: "index_event_teams_on_team_id_and_event_id"
+  end
+
+  create_table "event_volunteers", id: false, force: :cascade do |t|
+    t.bigint "event_id", null: false
+    t.bigint "volunteer_id", null: false
+    t.index ["event_id", "volunteer_id"], name: "index_event_volunteers_on_event_id_and_volunteer_id"
+    t.index ["volunteer_id", "event_id"], name: "index_event_volunteers_on_volunteer_id_and_event_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -94,6 +101,31 @@ ActiveRecord::Schema.define(version: 20170830175912) do
     t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "volunteers", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "address"
+    t.string "city"
+    t.string "state"
+    t.integer "zipcode"
+    t.bigint "phone_number"
+    t.datetime "birthday"
+    t.string "shirt_size"
+    t.string "previous_position"
+    t.string "previous_rallys"
+    t.string "position"
+    t.string "qualifications"
+    t.string "medical"
+    t.integer "sfi_number"
+    t.string "sweep_equipment"
+    t.boolean "ham_operator", default: false
+    t.string "ham_number"
+    t.string "radio_equipment"
+    t.string "friends"
+    t.boolean "first_time_volunteer", default: false
+    t.datetime "available_dates"
   end
 
 end

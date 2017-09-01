@@ -1,0 +1,31 @@
+#form
+   = simple_form_for(@volunteer) do |f|
+      f.error_notification
+
+      .form-inputs
+        = f.input  :name
+        = f.input  :email
+        = f.input  :address
+        = f.input  :city
+        = f.input  :state
+        = f.input  :zipcode
+        = f.input  :phone_number
+        = f.input  :birthday
+        = f.input  :shirt_size, label: "T-Shirt Size"
+        = f.input  :previous_position, label: "Past volunteer positions"
+        = f.input  :previous_rallys, label: "Rallys you've volunteered at"
+        = f.input  :available_dates, label: "What days are you available to volunteer?"
+        = f.input  :position, label: "What position would you like to work at your next rally"
+        = f.input  :qualifications, as: :text, label: "If you haven't worked the requested position in the past select your credentials or other qualifications."
+        = f.input  :medical, as: :text, label: "If you selected medical please list here your medical credentials"
+        = f.input  :sfi_number, label: "If selecting Technical Inspection please provide your SFI Certificate Number"
+        = f.input  :sweep_equipment, as: :text, label: "If you selected Sweep what type of equipment do you have?"
+        = f.input  :first_time_volunteer, label: "Are you a first time volunteer?"
+        = f.input  :ham_operator, label: "Are you a licenced Ham Radio Operator?"
+        = f.input  :ham_number, label: "If you checked the box above what's your Ham Radio License Number"
+        = f.input  :radio_equipment, as: :text, label: "If selected Radio operator please provide your radio equipment information"
+        = f.input  :friends, as: :text, label: "If you have someone you would like to be working with please list their names here"
+        = f.input :events, collection: Event.all.map { |event| [event.title, event.id] }, input_html: { multiple: true }, label: "Please pick the rallys you'd like to volunteer for"
+
+      .form-actions
+         = f.button :submit
