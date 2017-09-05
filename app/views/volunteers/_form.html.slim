@@ -1,4 +1,5 @@
-#form
+.user-form
+   h1.new Volunteer Registration
    = simple_form_for(@volunteer) do |f|
       f.error_notification
 
@@ -29,3 +30,6 @@
 
       .form-actions
          = f.button :submit, value: "Volunteer"
+
+      .links
+        = link_to 'Back', volunteers_path

@@ -1,0 +1,19 @@
+.user-form
+  h1
+    | Sign up
+  = simple_form_for(resource, as: resource_name, url: new_user_registration_path) do |f|
+    = f.error_notification
+    .form-inputs
+      = f.input :name, required: true, autofocus: true, placeholder: "Name", label: false
+      = f.input :email, required: true, placeholder: "Email", label: false
+      = f.input :password, required: true, placeholder: "Password", label: false
+
+      = f.input :password_confirmation, required: true, label: false, placeholder: "Password Confirmation"
+    .form-actions
+      .user-button
+        = f.button :submit, "Sign up"
+
+  .links
+    = render "devise/shared/links"
+
+/*hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),

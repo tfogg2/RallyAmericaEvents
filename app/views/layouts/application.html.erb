@@ -41,17 +41,23 @@
                 <div class="top-nav">
                   <li><%= link_to "Events", events_path %></li>
                   <li><%= link_to "Teams", teams_path %></li>
-                  <li><%= link_to "Volunteer", new_volunteer_path %></li>
+                  <%- if user_signed_in? %>
+                    <li><%= link_to "Volunteer", new_volunteer_path, class: "volunteer-link" %></li>
+                  <%- else %>
+                    <li><%= link_to "Volunteer", new_user_registration_path %></li>
+                  <%- end %>
                 </div>
                 <%- if user_signed_in? %>
                   <div class="bottom-nav">
-                     <li><%= link_to "Admin", admin_root_path %></li>
+                     <%- if current_user.admin? %>
+                      <li><%= link_to "Admin", admin_root_path %></li>
+                     <%- end %>
                      <li><%= link_to "Logout", destroy_user_session_path, :controller => "users", method: :delete %></li>
                   </div>
                 <%- else %>
                   <div class="bottom-nav">
                     <li><%= link_to "Login", new_user_session_path %></li>
-  
+                    <li><%= link_to "Signup", new_user_registration_path %></li>
                   </div>
                 <%- end %>
               </ul>
