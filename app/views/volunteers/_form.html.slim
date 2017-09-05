@@ -29,7 +29,8 @@
         = f.input :events, collection: Event.all.map { |event| [event.title, event.id] }, input_html: { multiple: true }, label: "Please pick the rallys you'd like to volunteer for"
 
       .form-actions
-         = f.button :submit, value: "Volunteer"
+         .user-button
+          = f.button :submit, value: "Volunteer"
 
       .links
         = link_to 'Back', volunteers_path
