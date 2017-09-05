@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :teams
 
   resources :volunteers
-
   resources :events do
     resources :activities
     resources :supplementals
