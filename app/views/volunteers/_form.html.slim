@@ -11,11 +11,11 @@
         = f.input  :state
         = f.input  :zipcode
         = f.input  :phone_number
-        = f.input  :birthday
+        = f.input  :birthday, as: :date, start_year: Date.today.year - 90, end_year: Date.today.year, order: [:month, :day, :year]
         = f.input  :shirt_size, label: "T-Shirt Size"
         = f.input  :previous_position, label: "Past volunteer positions"
         = f.input  :previous_rallys, label: "Rallys you've volunteered at"
-        = f.input  :available_dates, label: "What days are you available to volunteer?"
+        = f.input  :available_dates, label: "What days are you available to volunteer?", as: :date, start_year: Date.today.year, end_year: Date.today.year + 2, order: [:month, :day, :year]
         = f.input  :position, label: "What position would you like to work at your next rally"
         = f.input  :qualifications, as: :text, label: "If you haven't worked the requested position in the past select your credentials or other qualifications."
         = f.input  :medical, as: :text, label: "If you selected medical please list here your medical credentials"
