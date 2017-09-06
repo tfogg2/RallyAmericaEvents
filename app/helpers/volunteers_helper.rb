@@ -37,4 +37,19 @@ module VolunteersHelper
     label
   end
 
+  def shirt_size_label(shirt_size)
+    label = "Youth Small"
+    label = "Youth Medium" if shirt_size == 'youth_medium'
+    label = "Youth Large" if shirt_size == 'youth_large'
+    label = "Women Small" if shirt_size == 'women_small'
+    label = "Women Medium" if shirt_size == 'women_medium'
+    label = "Women Large" if shirt_size == 'women_large'
+    label = "Men Small" if shirt_size == 'men_small'
+    label = "Men Medium" if shirt_size == 'men_medium'
+    label = "Men Large" if shirt_size == 'men_large'
+    label = "Men X-Large" if shirt_size == 'men_x_large'
+    label = "Men XX-Large" if shirt_size == 'men_xx_large'
+    label
+  end
+
 end
