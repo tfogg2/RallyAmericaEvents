@@ -5,8 +5,16 @@ $(document).ready(function(){
       altField: $(this).next()
     })
   })
+  $("select.datepicker").each(function(input) {
+    $(this).datepicker({
+      dateFormat: "yy-mm-dd",
+      altField: $(this).next()
+    })
+  })
 
   $('.mult-select').multiSelect();
+
+
 
   // $('.datepicker').datepicker();
   //
