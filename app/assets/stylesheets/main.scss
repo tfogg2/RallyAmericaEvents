@@ -679,7 +679,7 @@ tr:nth-child(even) {
   font-size: 48px;
   color: #4c4c4c;
 }
-.user-form form input{
+.user-form form input, textarea{
   width: 100%;
   background: #f0f0f0;
   border: 1px solid #e0e0e0;
@@ -694,6 +694,10 @@ tr:nth-child(even) {
   width: 550px;
   margin: 0 auto;
   padding: 12px;
+}
+.user-form .text{
+  width: 550px;
+  margin: 0 auto;
 }
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #adadad;

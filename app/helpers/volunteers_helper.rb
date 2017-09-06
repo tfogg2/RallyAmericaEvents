@@ -52,4 +52,20 @@ module VolunteersHelper
     label
   end
 
+  def past_rally_label(past_rally)
+    label = "Sno*Drift 2005-2017"
+    label = "100 Acre Wood 2005-2016" if past_rally == "100_acre_wood"
+    label = "Oregon Trail Rally 2005-2016" if past_rally == "oregon_trail_rally"
+    label = "Olympus Rally 2005-2016" if past_rally == "olympus_rally"
+    label = "STPR 2005-2016" if past_rally == "stpr"
+    label = "New England Forest Rally 2005-2016" if past_rally == "nefr"
+    label = "Ojibwe 2005-2016" if past_rally == "ojibwe"
+    label = "LSPR 2005-2016" if past_rally == "lspr"
+    label = "Rally Colorado 2005-2009" if past_rally == "rally_colorado"
+    label = "Show - Me Rally 2013-2016" if past_rally == "show_me_rally"
+    label = "Sno*Drift Summer 2015-2016" if past_rally == "sno_drift_summer"
+    label = "Nemadji Winter Rally 2014-2016" if past_rally == "nemadji_winter_rally"
+    label
+  end
+
 end
