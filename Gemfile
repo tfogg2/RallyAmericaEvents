@@ -32,6 +32,8 @@ gem "paperclip", "~> 5.0.0"
 
 gem 'activeadmin'
 gem 'activeadmin_addons'
+gem 'select2-rails'
+gem 'activeadmin-select2', github: 'mfairburn/activeadmin-select2'
 gem "just-datetime-picker"
 gem "cancan"
 gem 'devise'

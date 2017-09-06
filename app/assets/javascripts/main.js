@@ -14,6 +14,11 @@ $(document).ready(function(){
 
   $('.mult-select').multiSelect();
 
+  $('.select').children('select').multiSelect();
+
+
+
+
 
 
   // $('.datepicker').datepicker();

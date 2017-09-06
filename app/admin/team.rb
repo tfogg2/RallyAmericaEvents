@@ -30,7 +30,7 @@ ActiveAdmin.register Team do
           # s.input :title
         # end
       # end
-      f.inputs :events, collection: Event.all.map { |event| [event.title, event.id] }
+      f.inputs :events, as: :select2_multiple, collection: Event.all.map { |event| [event.title, event.id] }, class: "mult-select"
     end
     f.actions
   end

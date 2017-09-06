@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/mfairburn/activeadmin-select2.git
+  revision: f35b0367cca61266737c94ca9a94cd142c95b763
+  specs:
+    activeadmin-select2 (0.1.8)
+      activeadmin
+      jquery-rails
+      select2-rails
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -294,6 +303,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  activeadmin-select2!
   activeadmin_addons
   byebug
   cancan
@@ -312,6 +322,7 @@ DEPENDENCIES
   puma (~> 3.7)
   rails (~> 5.1.2)
   sass-rails (~> 5.0)
+  select2-rails
   selenium-webdriver
   simple_form
   slim-rails
