@@ -36,6 +36,7 @@ gem "just-datetime-picker"
 gem "cancan"
 gem 'devise'
 gem 'simple_form'
+gem 'multi-select-rails'
 
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS

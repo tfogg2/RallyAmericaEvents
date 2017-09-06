@@ -6,6 +6,8 @@ $(document).ready(function(){
     })
   })
 
+  $('.multi-select').multiSelect();
+
   // $('.datepicker').datepicker();
   //
   // var date_input=$('input.event_time_frame'); //our date input has the name "date"
