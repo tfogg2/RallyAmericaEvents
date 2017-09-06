@@ -12,8 +12,8 @@
         = f.input  :zipcode
         = f.input  :phone_number
         = f.input  :birthday, as: :date, start_year: Date.today.year - 90, end_year: Date.today.year, order: [:month, :day, :year]
-        = f.input  :shirt_size, label: "T-Shirt Size", collection: Volunteer.shirt_sizes.map {|ss| [shirt_size_label(ss), ss] }
-        = f.input  :previous_position, label: "Past volunteer positions", collection: Volunteer.past_positions.map {|pp| [past_position_label(pp), pp] }
+        = f.input  :shirt_size, label: "T-Shirt Size", collection: Volunteer.shirt_sizes.map {|ss| [shirt_size_label(ss), ss] }, input_html: { multiple: true, class: "mult-select"}
+        = f.input  :previous_position, label: "Past volunteer positions", collection: Volunteer.past_positions.map {|pp| [past_position_label(pp), pp] }, input_html: { multiple: true, class: "mult-select"}
         = f.input  :previous_rallys, label: "Rallys you've volunteered at"
         = f.input  :available_dates, label: "What days are you available to volunteer?", as: :date, start_year: Date.today.year, end_year: Date.today.year + 2, order: [:month, :day, :year]
         = f.input  :position, label: "What position would you like to work at your next rally"
