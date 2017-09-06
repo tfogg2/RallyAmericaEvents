@@ -6,7 +6,7 @@ $(document).ready(function(){
     })
   })
 
-  $('.multi-select').multiSelect();
+  $('.mult-select').multiSelect();
 
   // $('.datepicker').datepicker();
   //
