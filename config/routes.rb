@@ -16,7 +16,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show, :edit]
 
-  # devise_for :users, controllers: { registrations: "users/registrations" }
+  devise_for :users, only: [:index]
+  #, controllers: { registrations: "users/registrations" }
 
   resources :volunteers
   resources :events do
