@@ -57,9 +57,10 @@ class VolunteersController < ApplicationController
   # DELETE /volunteers/1
   # DELETE /volunteers/1.json
   def destroy
+    @user = current_user
     @volunteer.destroy
     respond_to do |format|
-      format.html { redirect_to volunteers_url, notice: 'Volunteer was successfully destroyed.' }
+      format.html { redirect_to @user, notice: 'Volunteer was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
