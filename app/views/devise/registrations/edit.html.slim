@@ -7,6 +7,7 @@
     .form-inputs
       = f.input :avatar, as: :file, label: "Profile Picture"
       = f.input :email, required: true, autofocus: true
+      = f.input :name
       - if devise_mapping.confirmable? && resource.pending_reconfirmation?
         p
           | Currently waiting confirmation for:
