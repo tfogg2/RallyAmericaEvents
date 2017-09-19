@@ -59,7 +59,7 @@
                      <%- if current_user.admin? %>
                       <li><%= link_to "Admin", admin_root_path %></li>
                      <%- end %>
-                     <li><%= link_to "Logout", destroy_user_session_path, :controller => "users", method: :delete %></li>
+                     <li><%= link_to "Logout", destroy_session_path(current_user), :controller => "users", method: :delete %></li>
                   </div>
                 <%- else %>
                   <div class="bottom-nav">
