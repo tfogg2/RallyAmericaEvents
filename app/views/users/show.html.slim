@@ -1,0 +1,43 @@
+#profile
+  .profile-top
+    - if @user.avatar.exists?
+      .avatar
+        = image_tag(@user.avatar)
+    -else
+      .avatar
+        .av-img = image_tag("profile-icon.png")
+    ul.profile-info
+      li = @user.name
+      li = @user.email
+      li = link_to "Edit Profile", edit_user_path(current_user)
+  .volunteer-events
+    - if @volunteers
+      - @volunteers.each do |v|
+        - v.events.each do |e|
+          #events
+            .header
+              h1.volunteer-activity Volunteer Activity
+
+            .table-responsive
+              table.table.table-hover
+                thead
+                  tr.top-row
+                    th Title
+                    th Location
+                    th Start Date
+                    th End Date
+                    th Volunteer Info
+                    th Registration
+
+                tbody
+                  = link_to event_path(e) do
+                    tr.event
+                      td = e.title
+                      td = e.location
+                      td = e.start_date.strftime("%D")
+                      td = e.end_date.strftime("%D")
+                      td = link_to "Edit Info", edit_volunteer_path(v)
+                      td = link_to "Cancel Registration", v,  method: :delete, data: { confirm: 'Are you sure?' }
+
+            .message
+              button.view-events = link_to "Volunteer", new_volunteer_path

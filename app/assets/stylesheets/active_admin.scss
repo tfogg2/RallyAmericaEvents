@@ -12,6 +12,9 @@
 @import "active_admin/mixins";
 @import "active_admin/base";
 @import "just_datetime_picker/base";
+//= require classic
+//= require classic.date
+//= require classic.time
 
 //= require select2
 

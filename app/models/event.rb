@@ -7,4 +7,6 @@ class Event < ApplicationRecord
   has_many :supplementals
   just_define_datetime_picker :start_date
   just_define_datetime_picker :end_date
+  has_attached_file :logo
+  validates_attachment_content_type :logo, content_type: ['image/jpeg', 'image/png', 'image/gif']
 end

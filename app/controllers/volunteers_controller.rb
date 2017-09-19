@@ -24,7 +24,9 @@ class VolunteersController < ApplicationController
   # POST /volunteers
   # POST /volunteers.json
   def create
-    @volunteer = Volunteer.new(volunteer_params)
+    @user = current_user
+    @volunteer = @user.volunteers.new(volunteer_params)
+
 
     respond_to do |format|
       if @volunteer.save
@@ -69,6 +71,7 @@ class VolunteersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def volunteer_params
-      params.require(:volunteer).permit(:name, :email, :address, :city, :state, :zipcode, :phone_number, :birthday, :shirt_size, :previous_position, :previous_rallys, :position, :qualifications, :medical, :sfi_number, :sweep_equipment, :first_time_volunteer, :ham_operator, :ham_number, :radio_equipment, :friends, :available_dates, :event_ids => [])
+      params.require(:volunteer).permit(:user, :name, :email, :address, :city, :state, :zipcode, :phone_number, :birthday, :shirt_size, :previous_position, :previous_rallys, :position, :qualifications, :medical, :sfi_number, :sweep_equipment, :first_time_volunteer, :ham_operator, :ham_number, :radio_equipment, :friends,
+      :start_date, :end_date, :event_ids => [])
     end
 end

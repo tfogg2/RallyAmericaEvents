@@ -7,8 +7,7 @@
       table.table.table-hover
         thead
           tr.top-row
-            th Title
-            th Description
+            th
             th Location
             th Start Date
             th End Date
@@ -18,8 +17,9 @@
         - @events.each do |e|
           = link_to event_path(e) do
             tr.event
-              td = link_to e.title, event_path(e)
-              td = e.description
+              - if e.logo.exists?
+                td.event-logo = link_to event_path(e) do
+                  = image_tag(e.logo)
               td = e.location
               td = e.start_date.strftime("%D")
               td = e.end_date.strftime("%D")

@@ -128,6 +128,22 @@ $(document).ready(function(){
       $('.youtube-bottom').show();
     });
   });
+  $('.insta').mouseenter(function(){
+    $('.insta-bottom').hide();
+    $('.insta-bottom-yellow').show();
+    $(this).mouseleave(function(){
+      $('.insta-bottom-yellow').hide();
+      $('.insta-bottom').show();
+    });
+  });
+  $('.twitter').mouseenter(function(){
+    $('.twitter-bottom').hide();
+    $('.twitter-bottom-yellow').show();
+    $(this).mouseleave(function(){
+      $('.twitter-bottom-yellow').hide();
+      $('.twitter-bottom').show();
+    });
+  });
 
   $(function() {
 

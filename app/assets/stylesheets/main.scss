@@ -1,8 +1,20 @@
+html{
+  height: 100%;
+}
 body{
+  min-height: 100%;
   background-color: #000 !important;
   -webkit-font-smoothing: antialiased;
   font-size: 85%;
   font-family: Open Sans,open-sans,sans-serif;
+}
+#flash_alert{
+  text-align: center;
+  color: #D8000C;
+}
+#flash_notice{
+  text-align: center;
+  color: #4F8A10;
 }
 a{
   text-decoration: none;
@@ -282,7 +294,11 @@ label.boolean {
 .event-info p{
   opacity: .6;
 }
+.event-logo img{
+  height: 100px;
+}
 #main-div{
+  height: 100vh;
   background: #000;
   margin-top: 60px;
   color: #efefef;
@@ -538,10 +554,10 @@ tr:nth-child(even) {
 .view-events{
   width: 150px;
   height: 40px;
+  margin: 40px auto 0 auto;
   border-radius: 2px;
   background: #D80101;
   border: none;
-  margin-top: 40px;
   font-family: Open Sans,open-sans,sans-serif;
   font-size: 14px;
   text-shadow: none;
@@ -551,6 +567,9 @@ tr:nth-child(even) {
 .view-events a{
   text-decoration: none;
   color: white;
+}
+.message{
+  text-align: center;
 }
 .message .view-events:hover{
   background-image: none;
@@ -562,12 +581,20 @@ tr:nth-child(even) {
   display: block;
 }
 .social-bottom img{
+  height: 40px;
+  width: 40px;
   margin: 0px 10px;
 }
 .facebook{
   display: inline-block;
 }
 .youtube{
+  display: inline-block;
+}
+.insta{
+  display: inline-block;
+}
+.twitter{
   display: inline-block;
 }
 #footer{
@@ -583,11 +610,18 @@ tr:nth-child(even) {
 .youtube-bottom-yellow{
   display: none;
 }
+.insta-bottom-yellow{
+  display: none;
+}
+.twitter-bottom-yellow{
+  display: none;
+}
 #site-wrapper {
   position: relative;
   overflow: hidden;
   width: 100%;
-
+  height: 100%;
+  min-height: 620px;
 }
 #site-canvas {
   width: 100%;
@@ -681,7 +715,7 @@ tr:nth-child(even) {
 .user-form h1{
   text-align: center;
   font-size: 48px;
-  color: #4c4c4c;
+  color: #232323;
 }
 .user-form form input, textarea{
   width: 100%;
@@ -743,9 +777,50 @@ tr:nth-child(even) {
   font-size: 14px;
   color: white;
   text-shadow: none;
+  border: none;
 }
 .user-form form .user-button input:hover{
   background: #fff;
   border: 1px solid #4a90e2;
   color: #4a90e2;
+}
+#profile{
+
+  margin: 10px;
+  box-sizing: border-box;
+  width: calc(100% - 20px);
+  padding: 20px;
+  color: #fff;
+}
+.profile-top{
+  background: #161616;
+  height: 200px;
+  margin-bottom: 50px;
+  border-radius: 10px;
+}
+.avatar{
+  height: 180px;
+  width: 180px;
+  box-sizing: border-box;
+  float: left;
+  padding: 10px;
+  margin: 10px 20px 10px 10px;
+  background: #292929;
+  border: 1px solid #292929;
+  border-radius: 10px;
+}
+.av-img{
+  text-align: center;
+  margin-top: 30px;
+}
+.profile-info{
+  padding: 10px;
+  margin: 10px ;
+  list-style-type: none;
+  font-size: 14px;
+  line-height: 2;
+  font-weight: 600;
+}
+.volunteer-activity{
+  margin-bottom: 20px;
 }

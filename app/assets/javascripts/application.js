@@ -14,4 +14,8 @@
 //= require jquery
 //= require moment
 //= require rails-ujs
+//= require picker
+//= require picker.date
+//= require picker.time
+//= require legacy
 //= require_tree .

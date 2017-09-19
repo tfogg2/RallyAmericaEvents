@@ -5,6 +5,11 @@ class UsersController < ApplicationController
     # admins only
   end
 
+  def show
+    @user = User.find(params[:id])
+    @volunteers = @user.volunteers.all
+  end
+
   private
 
   # This should probably be abstracted to ApplicationController
