@@ -59,10 +59,37 @@ a.navbar-brand{
 .fb{
   margin-left: 92px;
 }
-.social-container img{
-  margin-top: 32px;
-  margin-left: 15px;
-
+.social-container ul{
+  width: 127px;
+  margin-top: 44px;
+  margin-left: 90px;
+  list-style-type: none;
+  display: block;
+  color: white;
+  padding-left: 0;
+  font-size: 14px;
+  font-family: Open Sans,open-sans,sans-serif;
+  opacity: .8;
+}
+.social-container li.login {
+  display: inline-block;
+  margin: 0 6px 0 8px;
+}
+.social-container li {
+  display: inline-block;
+  margin: 0 6px;
+}
+.social-container li a{
+  color: white;
+}
+.social-container li a:hover{
+  opacity: .5;
+}
+.social-container:hover li a{
+  color: #000;
+}
+.social-container:hover ul{
+  color: #000;
 }
 .social-container:hover{
   background: url('social-bg-yellow.svg') no-repeat;

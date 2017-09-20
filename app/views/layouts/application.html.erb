@@ -34,10 +34,22 @@
                 <%= link_to image_tag('rally-logo.png'), root_path, class:"logo" %>
               </div>
               <div class="social-container">
-                <%= link_to image_tag('fb-icon.svg'), "https://www.facebook.com/RallyAmerica/", class:'fb op', target: "_blank" %>
-                <%= link_to image_tag('youtube-icon.svg'), "https://www.youtube.com/user/RallyAmericaSeries", class:'youtube op', target: "_blank" %>
-                <%= link_to image_tag('fb-icon-black.svg'), "https://www.facebook.com/RallyAmerica/", class:'fb black', target: "_blank" %>
-                <%= link_to image_tag('youtube-icon-black.svg'), "https://www.youtube.com/user/RallyAmericaSeries", class:'youtube black', target: "_blank" %>
+                <ul>
+                  <%- if user_signed_in? %>
+                    <%- if current_user.admin? %>
+                     <li><%= link_to "Admin", admin_root_path %></li> |
+                    <%- end %>
+                    <li><%= link_to "Logout", destroy_session_path(current_user), :controller => "users", method: :delete %></li>
+                  <%- else %>
+                    <li class="login"><%= link_to "Login", new_user_session_path %></li> |
+                    <li><%= link_to "Signup", new_user_registration_path %></li>
+                  <%- end %>
+                </ul>
+
+                <%# link_to image_tag('fb-icon.svg'), "https://www.facebook.com/RallyAmerica/", class:'fb op', target: "_blank" %>
+                <%# link_to image_tag('youtube-icon.svg'), "https://www.youtube.com/user/RallyAmericaSeries", class:'youtube op', target: "_blank" %>
+                <%# link_to image_tag('fb-icon-black.svg'), "https://www.facebook.com/RallyAmerica/", class:'fb black', target: "_blank" %>
+                <%# link_to image_tag('youtube-icon-black.svg'), "https://www.youtube.com/user/RallyAmericaSeries", class:'youtube black', target: "_blank" %>
               </div>
             </div>
             <div id="site-menu">
