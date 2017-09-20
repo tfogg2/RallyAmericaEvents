@@ -12,6 +12,13 @@ body{
   text-align: center;
   color: #D8000C;
 }
+.error_notification{
+  text-align: center;
+  color: #D8000C;
+}
+.error{
+  color: #D8000C;
+}
 #flash_notice{
   text-align: center;
   color: #4F8A10;
@@ -673,7 +680,7 @@ tr:nth-child(even) {
 }
 #site-menu {
   width: 240px;
-  height: 75vh;
+  height: 78vh;
   // height: 100%;
   position: absolute;
   top: 100px;
