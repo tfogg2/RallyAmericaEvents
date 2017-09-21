@@ -45,9 +45,9 @@ a.navbar-brand{
   height: 100px;
   box-sizing: border-box;
   min-width: 640px;
-  -moz-box-shadow:1px 1px 50px 0 black;
-  -webkit-box-shadow:1px 1px 50px 0 black;
-  box-shadow:1px 1px 50px 0 black;
+  -moz-box-shadow:1px 1px 25px 0 #060606;
+  -webkit-box-shadow:1px 1px 25px 0 #060606;
+  box-shadow:1px 1px 25px 0 #060606;
   // background: url('top-bar.svg') no-repeat;
 }
 #top-bar a{
@@ -346,6 +346,9 @@ table {
   border-collapse: collapse;
   font-size: 14px;
 }
+table tr td{
+  vertical-align: middle;
+}
 #events{
   margin: 20px 0 100px 0;
   border-top: none;
@@ -383,13 +386,16 @@ table {
 .header{
   text-align: left;
   color: #fff;
-  padding: 0px 20px 5px 20px;
+  padding: 0px 20px 5px 40px;
   margin-top: 20px;
 }
 .header h1{
   color: #fff;
   margin: 10px 0px;
   font-size: 48px;
+}
+h1.volunteer-activity{
+  font-size: 24px;
 }
 thead th{
   background: #202020;
@@ -823,17 +829,18 @@ tr:nth-child(even) {
   color: #4a90e2;
 }
 #profile{
-  margin: 10px;
+  /* margin-top: -10px; */
   box-sizing: border-box;
-  width: calc(100% - 20px);
-  padding: 20px;
+  /* width: calc(100% - 0px); */
+  /* padding: 20px; */
+  /* padding-top: 25px; */
   color: #fff;
 }
 .profile-top{
   background: #202020;
   height: 200px;
   margin-bottom: 50px;
-  border-radius: 10px;
+  padding: 30px;
 }
 .avatar{
   height: 180px;
@@ -841,7 +848,7 @@ tr:nth-child(even) {
   box-sizing: border-box;
   float: left;
   padding: 10px;
-  margin: 10px 20px 10px 10px;
+  margin: 10px 40px 10px 10px;
   background: #292929;
   border: 1px solid #292929;
   border-radius: 10px;
@@ -850,13 +857,16 @@ tr:nth-child(even) {
   text-align: center;
   margin-top: 30px;
 }
+.name{
+  font-weight: 600;
+}
 .profile-info{
   padding: 10px;
   margin: 10px ;
   list-style-type: none;
   font-size: 14px;
   line-height: 2;
-  font-weight: 600;
+  // font-weight: 600;
 }
 .volunteer-activity{
   margin-bottom: 20px;

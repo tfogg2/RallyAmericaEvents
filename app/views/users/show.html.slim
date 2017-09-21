@@ -7,7 +7,7 @@
       .avatar
         .av-img = image_tag("profile-icon.png")
     ul.profile-info
-      li = @user.name
+      li.name = @user.name
       li = @user.email
       li = link_to "Edit Profile", edit_user_registration_path(current_user)
   .volunteer-events
@@ -20,7 +20,7 @@
           table.table.table-hover
             thead
               tr.top-row
-                th Title
+                th Rally
                 th Location
                 th Start Date
                 th End Date
@@ -32,6 +32,7 @@
                 - v.events.each do |e|
                   = link_to event_path(e) do
                     tr.event
+                      //td = v.position
                       td = e.title
                       td = e.location
                       td = e.start_date.strftime("%D")
