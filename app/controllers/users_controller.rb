@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < Devise::RegistrationsController
   # before_action :authorize_admin, only: :create
 
 

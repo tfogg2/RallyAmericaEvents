@@ -90,7 +90,7 @@ a.navbar-brand{
 }
 .social-container li a{
   color: white;
-  font-weight: bold;
+  // font-weight: bold;
 }
 .social-container li a:hover{
   // opacity: .5;
@@ -386,10 +386,21 @@ table tr td{
 .header{
   text-align: left;
   color: #fff;
-  padding: 0px 20px 5px 40px;
+  padding: 0px 20px 5px 20px;
   margin-top: 20px;
 }
 .header h1{
+  color: #fff;
+  margin: 10px 0px;
+  font-size: 48px;
+}
+.volunteer-header{
+  text-align: left;
+  color: #fff;
+  padding: 0px 20px 5px 40px;
+  margin-top: 20px;
+}
+.volunteer-header h1{
   color: #fff;
   margin: 10px 0px;
   font-size: 48px;

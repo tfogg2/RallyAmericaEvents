@@ -9,11 +9,11 @@
     ul.profile-info
       li.name = @user.name
       li = @user.email
-      li = link_to "Edit Profile", edit_user_registration_path(current_user)
+      li = link_to "Edit Profile", edit_user_path
   .volunteer-events
     - if @volunteers
       #events
-        .header
+        .volunteer-header
           h1.volunteer-activity Volunteer Activity
 
         .table-responsive
