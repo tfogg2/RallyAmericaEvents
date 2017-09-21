@@ -1,6 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
   before_action :authenticate_user!, :redirect_unless_admin,  only: [:new, :create]
-  skip_before_action :require_no_authentication
+  prepend_before_action :require_no_authentication, only: :cancel
 
   private
   def redirect_unless_admin

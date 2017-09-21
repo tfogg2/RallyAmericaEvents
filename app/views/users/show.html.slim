@@ -9,7 +9,7 @@
     ul.profile-info
       li = @user.name
       li = @user.email
-      li = link_to "Edit Profile", edit_user_path(current_user)
+      li = link_to "Edit Profile", edit_user_registration_path(current_user)
   .volunteer-events
     - if @volunteers
       #events
