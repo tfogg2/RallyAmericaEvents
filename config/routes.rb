@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     resources :supplementals
   end
 
-  #devise_for :users
+  devise_for :users, only: [:index, :show, :edit]
   #, controllers: { registrations: "devise/registrations"}
 
 
