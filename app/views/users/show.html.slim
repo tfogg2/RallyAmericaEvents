@@ -10,7 +10,8 @@
       li.name = @user.name
       li = @user.email
       li = link_to "Edit Profile", edit_user_path
-      li = link_to "Edit Volunteer Info", edit_volunteer_path
+      - if @volunteer
+        li = link_to "Edit Volunteer Info", edit_volunteer_path
   .volunteer-events
     - if @volunteers
       #events
@@ -44,5 +45,5 @@
 
             button.view-events = link_to "Events", volunteer_event_path(@volunteer)
           -else
-          
+
             button.view-events = link_to "Volunteer",  new_volunteer_path
