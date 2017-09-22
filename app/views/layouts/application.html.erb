@@ -58,14 +58,18 @@
               <ul class="dropdown-menu">
                 <div class="top-nav">
                   <%- if current_user %>
-                    <%- if current_user.admin? && current_user.volunteers.any? %>
+                    <%- if current_user.admin?  && current_user.volunteer %>
                       <li><%= link_to "Profile", user_path(current_user) %></li>
                     <%- end %>
                   <%- end %>
                   <li><%= link_to "Events", events_path %></li>
                   <li><%= link_to "Teams", teams_path %></li>
                   <%- if user_signed_in? %>
-                    <li><%= link_to "Volunteer", new_volunteer_path, class: "volunteer-link" %></li>
+                    <%- if !current_user.volunteer %>
+                      <li><%= link_to "Volunteer", new_volunteer_path, class: "volunteer-link" %></li>
+                    <%-else %>
+                      <li><%= link_to "Volunteer", show_user_path(current_user), class: "volunteer-link" %></li>
+                    <%- end %>
                   <%- else %>
                     <li><%= link_to "Volunteer", new_user_registration_path %></li>
                   <%- end %>

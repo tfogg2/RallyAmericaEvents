@@ -10,8 +10,8 @@ class UsersController < Devise::RegistrationsController
 
   def show
     @user = User.find(params[:id])
-    @volunteers = @user.volunteers.all
-    @volunteer = @user.volunteers.last
+    # @volunteers = @user.volunteers.all
+    @volunteer = @user.volunteer
   end
 
   def edit
