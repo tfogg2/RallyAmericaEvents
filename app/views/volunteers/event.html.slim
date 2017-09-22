@@ -2,7 +2,7 @@
   - flash.each do |name, msg|
       = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
   end
-   h1.new Volunteer Registration
+   h1.new Volunteer Events
 
    = simple_form_for(@volunteer) do |f|
       f.error_notification
