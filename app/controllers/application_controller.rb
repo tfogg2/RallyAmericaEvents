@@ -19,7 +19,5 @@ class ApplicationController < ActionController::Base
   #   devise_parameter_sanitizer.permit :account_update, keys: update_attrs
   # end
   #
-  # def sign_up_params
-  #   params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar)
-  # end
+  
 end
