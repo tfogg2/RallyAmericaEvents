@@ -11,7 +11,7 @@
       li = @user.email
       li = link_to "Edit Profile", edit_user_path
       - if @volunteer
-        li = link_to "Edit Volunteer Info", edit_volunteer_path
+        li = link_to "Edit Volunteer Info", edit_volunteer_path(@volunteer)
   .volunteer-events
     - if @volunteers
       #events
