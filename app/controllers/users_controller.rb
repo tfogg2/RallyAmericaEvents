@@ -11,7 +11,7 @@ class UsersController < Devise::RegistrationsController
   def show
     @user = User.find(params[:id])
     @volunteers = @user.volunteers.all
-    @volunteer = @user.volunteers.first
+    @volunteer = @user.volunteers.last
   end
 
   def edit

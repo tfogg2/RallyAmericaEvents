@@ -38,7 +38,7 @@
           = f.button :submit, value: "Volunteer"
 
       .links
-        = link_to 'Back', show_user_path
+        = link_to 'Back', show_user_path(@user)
 
 
 //= f.input :event_ids, collection: Event.all.map { |event| [event.title, event.id] }, input_html: { multiple: true, class: "mult-select"}, label: "Please pick the rallys you'd like to volunteer for"

@@ -14,6 +14,7 @@ class VolunteersController < ApplicationController
 
   # GET /volunteers/new
   def new
+    @user = current_user
     @volunteer = Volunteer.new
   end
 
