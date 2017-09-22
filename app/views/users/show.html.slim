@@ -27,17 +27,22 @@
                 th End Date
 
             tbody
-
-                - @volunteer.events.each do |e|
-                  = link_to event_path(e) do
-                    tr.event
-                      //td = v.position
-                      td = e.title
-                      td = e.location
-                      td = e.start_date.strftime("%D")
-                      td = e.end_date.strftime("%D")
-                      //td = link_to "Edit Info", edit_volunteer_path(@volunt)
-                      //td = link_to "Cancel Registration", v,  method: :delete, data: { confirm: 'Are you sure?' }
+                - if @volunteer
+                  - @volunteer.events.each do |e|
+                    = link_to event_path(e) do
+                      tr.event
+                        //td = v.position
+                        td = e.title
+                        td = e.location
+                        td = e.start_date.strftime("%D")
+                        td = e.end_date.strftime("%D")
+                        //td = link_to "Edit Info", edit_volunteer_path(@volunt)
+                        //td = link_to "Cancel Registration", v,  method: :delete, data: { confirm: 'Are you sure?' }
 
         .message
-          button.view-events = link_to "Events", volunteer_event_path(@volunteer)
+          - if @volunteer
+
+            button.view-events = link_to "Events", volunteer_event_path(@volunteer)
+          -else
+          
+            button.view-events = link_to "Volunteer",  new_volunteer_path
