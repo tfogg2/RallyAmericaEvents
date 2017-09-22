@@ -42,8 +42,8 @@
 
         .message
           - if @volunteer
-
-            button.view-events = link_to "Events", volunteer_event_path(@volunteer)
+            = link_to volunteer_event_path(@volunteer) do
+              button.view-events Events
           -else
-
-            button.view-events = link_to "Volunteer",  new_volunteer_path
+            = link_to new_volunteer_path do
+              button.view-events Volunteer
