@@ -30,7 +30,7 @@ class VolunteersController < ApplicationController
   # POST /volunteers.json
   def create
     @user = current_user
-    @volunteer = @user.volunteers.new(volunteer_params)
+    @volunteer = @user.volunteer.new(volunteer_params)
 
 
     respond_to do |format|
