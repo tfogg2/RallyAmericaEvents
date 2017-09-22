@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   resources :users
 
   resources :volunteers
+  get '/volunteers/:id/event' => 'volunteers#event', as: "volunteer_event"
+
   resources :events do
     resources :activities
     resources :supplementals

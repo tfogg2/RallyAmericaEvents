@@ -10,6 +10,7 @@
       li.name = @user.name
       li = @user.email
       li = link_to "Edit Profile", edit_user_path
+      li = link_to "Edit Volunteer Info", edit_volunteer_path
   .volunteer-events
     - if @volunteers
       #events
@@ -24,12 +25,10 @@
                 th Location
                 th Start Date
                 th End Date
-                th Volunteer Info
-                th Registration
 
             tbody
-              - @volunteers.each do |v|
-                - v.events.each do |e|
+
+                - @volunteer.events.each do |e|
                   = link_to event_path(e) do
                     tr.event
                       //td = v.position
@@ -37,8 +36,8 @@
                       td = e.location
                       td = e.start_date.strftime("%D")
                       td = e.end_date.strftime("%D")
-                      td = link_to "Edit Info", edit_volunteer_path(v)
-                      td = link_to "Cancel Registration", v,  method: :delete, data: { confirm: 'Are you sure?' }
+                      //td = link_to "Edit Info", edit_volunteer_path(@volunt)
+                      //td = link_to "Cancel Registration", v,  method: :delete, data: { confirm: 'Are you sure?' }
 
         .message
-          button.view-events = link_to "Volunteer", new_volunteer_path
+          button.view-events = link_to "Events", volunteer_event_path(@volunteer)

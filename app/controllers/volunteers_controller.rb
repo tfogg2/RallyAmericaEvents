@@ -1,5 +1,5 @@
 class VolunteersController < ApplicationController
-  before_action :set_volunteer, only: [:show, :edit, :update, :destroy]
+  before_action :set_volunteer, only: [:show, :edit, :update, :destroy, :event]
 
   # GET /volunteers
   # GET /volunteers.json
@@ -19,6 +19,10 @@ class VolunteersController < ApplicationController
 
   # GET /volunteers/1/edit
   def edit
+  end
+
+  def event
+    @user = current_user
   end
 
   # POST /volunteers

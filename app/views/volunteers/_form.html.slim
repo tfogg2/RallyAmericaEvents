@@ -31,11 +31,14 @@
         = f.input  :ham_number, label: "If you checked the box above, what's your Ham Radio License Number"
         = f.input  :radio_equipment, as: :text, label: "If selected Radio operator please provide your radio equipment information"
         = f.input  :friends, as: :text, label: "If you have someone you would like to be working with please list their names here"
-        = f.input :event_ids, collection: Event.all.map { |event| [event.title, event.id] }, input_html: { multiple: true, class: "mult-select"}, label: "Please pick the rallys you'd like to volunteer for"
+
 
       .form-actions
          .user-button
           = f.button :submit, value: "Volunteer"
 
       .links
-        = link_to 'Back', volunteers_path
+        = link_to 'Back', show_user_path
+
+
+//= f.input :event_ids, collection: Event.all.map { |event| [event.title, event.id] }, input_html: { multiple: true, class: "mult-select"}, label: "Please pick the rallys you'd like to volunteer for"

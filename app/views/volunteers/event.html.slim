@@ -1,0 +1,18 @@
+.user-form
+  - flash.each do |name, msg|
+      = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
+  end
+   h1.new Volunteer Registration
+
+   = simple_form_for(@volunteer) do |f|
+      f.error_notification
+
+      .form-inputs
+        = f.input :event_ids, collection: Event.all.map { |event| [event.title, event.id] }, input_html: { multiple: true, class: "mult-select"}, label: "Please pick the rallys you'd like to volunteer for"
+
+      .form-actions
+         .user-button
+          = f.button :submit, value: "Volunteer"
+
+      .links
+        = link_to 'Back', show_user_path(@user)
