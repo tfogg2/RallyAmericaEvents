@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, alert: exception.message
   end
 
+
   def configure_permitted_parameters
     update_attrs = [:password, :password_confirmation, :current_password, :name, :avatar, :email]
     devise_parameter_sanitizer.permit :account_update, keys: update_attrs
