@@ -10,8 +10,8 @@ Rails.application.routes.draw do
    get "/sign_in" => "devise/sessions#new", as: "new_user_session" # custom path to sign_up/registration
    post '/sign_in' => 'devise/sessions#create'
    get '/password/new' => 'devise/passwords#new', as: "new_user_password"
-   get '/users/:id/edit' => 'devise/registrations#edit', as: "edit_user_registration"
-   post '/users/:id/edit' => 'devise/registrations#update', as: "user_registration"
+   get '/users/:id/edit' => 'users#edit', as: "edit_user_registration"
+   put '/sign_up' => 'devise/registrations#update', as: "user_registration"
    get '/users/:id' => 'users#show', as: "show_user"
   end
 
