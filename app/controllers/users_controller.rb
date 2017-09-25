@@ -23,7 +23,7 @@ class UsersController < Devise::RegistrationsController
     if @user.update(user_params)
       # Sign in the user by passing validation in case their password changed
       bypass_sign_in(@user)
-      redirect_to root_path
+      redirect_to show_user_path(@user)
     else
       render "edit"
     end

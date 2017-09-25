@@ -1,6 +1,6 @@
 #profile
   .profile-top
-    - if @user.avatar.exists?
+    - if @user.avatar
       .avatar
         = image_tag(@user.avatar)
     -else
@@ -30,7 +30,7 @@
                 - if @volunteer
                   - @volunteer.events.each do |e|
                     = link_to event_path(e) do
-                      tr.event
+                      tr.event.volunteer-event
                         //td = v.position
                         td = e.title
                         td = e.location
