@@ -4,7 +4,7 @@
   end
    h1.new Volunteer Events
 
-   = simple_form_for(@volunteer) do |f|
+   = simple_form_for [@user, @volunteer], :method => :POST do |f|
       f.error_notification
 
       .form-inputs

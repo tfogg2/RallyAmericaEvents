@@ -11,7 +11,7 @@
       li = @user.email
       li = link_to "Edit Profile", edit_user_path
       - if @volunteer
-        li = link_to "Edit Volunteer Info", edit_volunteer_path(@volunteer)
+        li = link_to "Edit Volunteer Info", edit_user_volunteer_path(current_user, @volunteer)
   .volunteer-events
       #events
         .volunteer-header
@@ -44,5 +44,5 @@
             = link_to volunteer_event_path(@volunteer) do
               button.view-events Events
           -else
-            = link_to new_volunteer_path do
+            = link_to new_user_volunteer_path(current_user) do
               button.view-events Volunteer

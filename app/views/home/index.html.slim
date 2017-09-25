@@ -6,7 +6,7 @@
     h1 Something
     h1.big  Big.
     p Volunteer for Rally America's upcoming events
-    button.view-events = link_to "Volunteer", new_volunteer_path
+    button.view-events = link_to "Volunteer", new_user_volunteer_path(current_user)
 #home
   .home-content
     .licensing
@@ -22,7 +22,7 @@
       = image_tag('volunteer.png')
       h3 Volunteer
       p Rally America is looking for a lot of good folks that want to be involved and near the rally action. Please click here to register to become a volunteer:
-      p = link_to "Rally America Volunteer", new_volunteer_path
+      p = link_to "Rally America Volunteer", new_user_volunteer_path(current_user)
 .message-container.bottom
   .message
     h1.big Don't

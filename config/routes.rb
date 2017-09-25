@@ -15,9 +15,12 @@ Rails.application.routes.draw do
    get '/users/:id' => 'users#show', as: "show_user"
   end
 
-  resources :users
+  resources :users do
+    resources :volunteers
+    post '/volunteers/:id' => 'volunteers#create', as: "create_volunteer"
+  end
 
-  resources :volunteers
+
   get '/volunteers/:id/event' => 'volunteers#event', as: "volunteer_event"
 
   resources :events do

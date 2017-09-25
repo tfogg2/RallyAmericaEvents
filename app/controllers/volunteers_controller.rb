@@ -15,23 +15,24 @@ class VolunteersController < ApplicationController
   # GET /volunteers/new
   def new
     @user = current_user
-    @volunteer = Volunteer.new
+    @volunteer = @user.volunteers.new
   end
 
   # GET /volunteers/1/edit
   def edit
+    @volunteer = @user.volunteers.last
   end
 
   def event
     @user = current_user
+    @volunteer = @user.volunteers.last
   end
 
   # POST /volunteers
   # POST /volunteers.json
   def create
     @user = current_user
-    @volunteer = @user.volunteer.new(volunteer_params)
-
+    @volunteer = @user.volunteers.new(volunteer_params)
 
     respond_to do |format|
       if @volunteer.save
@@ -73,7 +74,8 @@ class VolunteersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_volunteer
-      @volunteer = Volunteer.find(params[:id])
+      @user = current_user
+      @volunteer = @user.volunteers.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
