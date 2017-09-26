@@ -27,7 +27,10 @@
       = image_tag('volunteer.png')
       h3 Volunteer
       p Rally America is looking for a lot of good folks that want to be involved and near the rally action. Please click here to register to become a volunteer:
-      p = link_to "Rally America Volunteer", new_user_volunteer_path(current_user)
+      -if user_signed_in?
+        p = link_to "Rally America Volunteer", new_user_volunteer_path(current_user)
+      -else
+        p = link_to "Rally America Volunteer", new_user_registration_path
 .message-container.bottom
   .message
     h1.big Don't
