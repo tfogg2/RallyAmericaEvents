@@ -2,7 +2,7 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
-    @event.logo = params[:event][:logo]
+    @events.logo = params[:event][:logo]
   end
 
   def show
