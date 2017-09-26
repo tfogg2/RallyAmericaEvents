@@ -2,7 +2,7 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
-    @events.logo = params[:event][:logo]
+
   end
 
   def show
@@ -32,6 +32,7 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
+        @event.logo = params[:event][:logo]
         format.html { redirect_to event_path(@event), notice: 'event was successfully updated.' }
         format.json { render :show, status: :ok, location: @event }
       else
