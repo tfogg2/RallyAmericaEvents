@@ -6,7 +6,11 @@
     h1 Volunteer
     h1.big  Today.
     p Volunteer for Rally America's upcoming events
-    = link_to new_user_volunteer_path(current_user) do
+    -if user_signed_in?
+      = link_to new_user_volunteer_path(current_user) do
+        button.view-events Volunteer
+    -else
+    = link_to new_user_registration_path do
       button.view-events Volunteer
 #home
   .home-content
