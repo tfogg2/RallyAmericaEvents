@@ -42,16 +42,16 @@ Rails.application.configure do
     }
   }
 
-#   connection = Fog::Storage.new({
-#     :provider                 => 'AWS',
-#     :aws_access_key_id        => ENV.fetch('AWS_ACCESS_KEY_ID'),
-#     :aws_secret_access_key    => ENV.fetch('AWS_SECRET_ACCESS_KEY'),
-#   })
-#
-#   directory = connection.directories.create(
-#   :key    => "fog-demo-#{Time.now.to_i}", # globally unique name
-#   :public => true
-# )
+  connection = Fog::Storage.new({
+    :provider                 => 'AWS',
+    :aws_access_key_id        => ENV.fetch('AWS_ACCESS_KEY_ID'),
+    :aws_secret_access_key    => ENV.fetch('AWS_SECRET_ACCESS_KEY'),
+  })
+
+  directory = connection.directories.create(
+  :key    => "fog-demo-#{Time.now.to_i}", # globally unique name
+  :public => true
+)
 
 
   # config.action_controller.asset_host = "//#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
