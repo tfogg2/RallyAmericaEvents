@@ -44,8 +44,8 @@ Rails.application.configure do
 
   connection = Fog::Storage.new({
     :provider                 => 'AWS',
-    :aws_access_key_id        => ENV.fetch('AWS_ACCESS_KEY_ID'),
-    :aws_secret_access_key    => ENV.fetch('AWS_SECRET_ACCESS_KEY'),
+    :aws_access_key_id        => 'AKIAIIB5WGLM5QNUQUBQ',
+    :aws_secret_access_key    => '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'
   })
 
   directory = connection.directories.create(
