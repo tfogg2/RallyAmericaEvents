@@ -38,12 +38,21 @@ Rails.application.configure do
       bucket: ENV.fetch('S3_BUCKET_NAME'),
       access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
       secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
-      s3_region: ENV.fetch('AWS_REGION'),
-      s3_host_name: "s3-#{ENV['AWS_REGION']}.amazonaws.com"
+      s3_region: ENV.fetch('AWS_REGION')
+
     }
   }
 
+  connection = Fog::Storage.new({
+    :provider                 => 'AWS',
+    :aws_access_key_id        => 'AKIAIIB5WGLM5QNUQUBQ',
+    :aws_secret_access_key    => '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'
+  })
 
+  directory = connection.directories.create(
+  :key    => "fog-demo-#{Time.now.to_i}", # globally unique name
+  :public => true
+)
 
 
   # config.action_controller.asset_host = "//#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
