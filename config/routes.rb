@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     resources :supplementals
   end
 
-  devise_for :users, skip: :registrations
+  devise_for :users, skip: :sessions
   #devise_for :users#, controllers: { registrations: "devise/registrations"}
 
 
