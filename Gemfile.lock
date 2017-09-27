@@ -68,6 +68,11 @@ GEM
     arbre (1.1.1)
       activesupport (>= 3.0.0)
     arel (8.0.0)
+    asset_sync (2.2.0)
+      activemodel (>= 4.1.0)
+      fog-core
+      mime-types (>= 2.99)
+      unf
     aws-sdk (2.10.53)
       aws-sdk-resources (= 2.10.53)
     aws-sdk-core (2.10.53)
@@ -309,6 +314,9 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.4)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.5.1)
@@ -332,6 +340,7 @@ DEPENDENCIES
   activeadmin
   activeadmin-select2!
   activeadmin_addons
+  asset_sync
   aws-sdk (~> 2.3)
   byebug
   cancan
