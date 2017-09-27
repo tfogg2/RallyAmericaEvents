@@ -19,7 +19,7 @@
             tr.event
               - if e.logo.exists?
                 td.event-logo = link_to event_path(e) do
-                  = image_tag e.logo
+                  = image_tag(e.logo.url)
               -else
 
                 td.event-logo
