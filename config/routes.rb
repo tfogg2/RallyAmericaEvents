@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   devise_scope :user do
    get "/sign_up" => "devise/registrations#new", as: "new_user_registration" # custom path to sign_up/registration
    post '/sign_up' => 'devise/registrations#create'
-   get "/sign_in" => "devise/sessions#new"#, as: "new_user_session" # custom path to sign_up/registration
+   get "/sign_in" => "devise/sessions#new", as: "new_user_session" # custom path to sign_up/registration
    post '/sign_in' => 'devise/sessions#create'
    get '/password/new' => 'devise/passwords#new', as: "new_user_password"
    get '/users/:id/edit' => 'users#edit', as: "edit_user_registration"
@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     resources :supplementals
   end
 
-  devise_for :users, controllers: { registrations: "devise/registrations"}
+  devise_for :users#, controllers: { registrations: "devise/registrations"}
 
 
 
