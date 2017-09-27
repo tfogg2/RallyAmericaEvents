@@ -43,16 +43,7 @@ Rails.application.configure do
     }
   }
 
-#   connection = Fog::Storage.new({
-#     :provider                 => 'AWS',
-#     :aws_access_key_id        => 'AKIAIIB5WGLM5QNUQUBQ',
-#     :aws_secret_access_key    => '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'
-#   })
-#
-#   directory = connection.directories.create(
-#   :key    => "fog-demo-#{Time.now.to_i}", # globally unique name
-#   :public => true
-# )
+
 
 
   # config.action_controller.asset_host = "//#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
