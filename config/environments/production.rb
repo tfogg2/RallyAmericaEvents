@@ -31,17 +31,24 @@ Rails.application.configure do
   config.assets.compile = true
 
 
-  config.paperclip_defaults = {
-    storage: :s3,
-    s3_credentials: {
-      :preserve_files => true,
-      bucket: ENV.fetch('S3_BUCKET_NAME'),
-      access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
-      secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
-      s3_region: ENV.fetch('AWS_REGION'),
-    }
-  }
+  # config.paperclip_defaults = {
+  #   storage: :s3,
+  #   s3_credentials: {
+  #     :preserve_files => true,
+  #     bucket: ENV.fetch('S3_BUCKET_NAME'),
+  #     access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
+  #     secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
+  #     s3_region: ENV.fetch('AWS_REGION')
+  #   }
+  # }
 
+  connection = Fog::Storage.new({
+    :provider                 => 'AWS',
+    :aws_access_key_id        => ENV.fetch('AWS_ACCESS_KEY_ID'),
+    :aws_secret_access_key    => ENV.fetch('AWS_SECRET_ACCESS_KEY'),
+  })
+
+  config.action_controller.asset_host = "//#{ENV['FOG_DIRECTORY']}.s3.amazonaws.com"
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
