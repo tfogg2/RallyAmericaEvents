@@ -45,7 +45,7 @@ Rails.application.configure do
 
   connection = Fog::Storage.new({
     :provider                 => 'AWS',
-    :region                   => "eu-west-1",
+    :region                   => "us-east-2",
     :aws_access_key_id        => 'AKIAIIB5WGLM5QNUQUBQ',
     :aws_secret_access_key    => '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'
   })
