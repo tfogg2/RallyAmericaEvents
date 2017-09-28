@@ -50,6 +50,7 @@ Rails.application.configure do
   })
 
   directory = connection.directories.create(
+  s3_region: ENV.fetch('AWS_REGION'),
   :key    => "rally-bucket", #"fog-demo-#{Time.now.to_i}", # globally unique name
   :public => true
 )
