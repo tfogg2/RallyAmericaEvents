@@ -50,7 +50,7 @@ Rails.application.configure do
   })
 
   directory = connection.directories.create(
-  :key    => "rally-bucket" #"fog-demo-#{Time.now.to_i}", # globally unique name
+  :key    => "rally-bucket", #"fog-demo-#{Time.now.to_i}", # globally unique name
   :public => true
 )
 
