@@ -45,12 +45,12 @@ Rails.application.configure do
 
   connection = Fog::Storage.new({
     :provider                 => 'AWS',
+    :region                   => "eu-west-1",
     :aws_access_key_id        => 'AKIAIIB5WGLM5QNUQUBQ',
     :aws_secret_access_key    => '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'
   })
 
   directory = connection.directories.create(
-  s3_region: ENV.fetch('AWS_REGION'),
   :key    => "rally-bucket", #"fog-demo-#{Time.now.to_i}", # globally unique name
   :public => true
 )
